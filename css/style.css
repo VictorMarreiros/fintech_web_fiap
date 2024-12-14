@@ -1,9 +1,136 @@
-h1 {
-    color: darkblue;}
-h2 {
-    color: red;
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-p {
-    color: brown;
-    font-size: 18px;
+
+/* variáveis CSS */
+:root {
+    --color-light: #f3f7fc;
+    --color-dark: #333333;
+    --color-blue-100: #e7f0f7;
+    --color-blue-200: #cadeed;
+    --color-blue-300: #9ac3df;
+    --color-blue-500: #4187b6;
+    --color-blue-900: #213c53;
+    --color-blue-950: #17293a;
+    --gradient: linear-gradient(to top,rgba(23,41,58, .9), rgba(23,41,58, .3));
+    --bd-radius: 8px;
 }
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-light);
+    font-weight: 900;
+    transition: color .5s;
+}
+
+a:hover {
+    color: var(--color-blue-300);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/********************************  hero da página  ********************************/
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem;
+    background-image: var(--gradient),
+    url(../images/index/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+span {
+    color: var(--color-blue-500);
+}
+
+.header-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer h1 {
+    font-size: clamp(4.5rem, 8vmax, 10rem);
+}
+
+.footer p {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-left: .5rem;
+}
+/********************************  fim hero da página  ********************************/
+
+
+/********************************  fintech  ********************************/
+.container {
+    width: 100%;
+    padding: 1rem 4rem;
+    margin-top: 3rem;
+}
+
+.titles {
+    font-size: 4.5rem;
+    width: 60%;
+    margin: 2rem 0;
+}
+
+.fintech-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.fintech-grid-item {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.fintech-grid-item img {
+    border-radius: var(--bd-radius);
+    filter: grayscale(1);
+    transition: .5s;
+}
+
+.fintech-grid-item:hover img {
+    filter: grayscale(0);
+    scale: 1.05;
+}
+/********************************  fim fintech  ********************************/
