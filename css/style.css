@@ -1,9 +1,252 @@
-h1 {
-    color: darkblue;}
-h2 {
-    color: red;
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-p {
-    color: brown;
-    font-size: 18px;
+
+/* variáveis CSS */
+:root {
+    --color-light: #f3f7fc;
+    --color-dark: #333333;
+    --color-blue-100: #e7f0f7;
+    --color-blue-200: #cadeed;
+    --color-blue-300: #9ac3df;
+    --color-blue-500: #4187b6;
+    --color-blue-900: #213c53;
+    --color-blue-950: #17293a;
+    --gradient: linear-gradient(to top,rgba(23,41,58, .9), rgba(23,41,58, .3));
+    --bd-radius: 8px;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-light);
+    font-weight: 900;
+    transition: color .5s;
+}
+
+a:hover {
+    color: var(--color-blue-300);
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/********************************  hero da página  ********************************/
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 3rem;
+    background-image: var(--gradient),
+    url(../images/index/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    color: var(--color-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 4rem;
+    position: relative;
+    z-index: 2;
+}
+
+span {
+    color: var(--color-blue-500);
+}
+
+.header-menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.sanduiche {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    display: none;
+}
+
+.barra {
+    display: block;
+    width: 3rem;
+    height: .3rem;
+    background-color: var(--color-light);
+    margin: .5rem auto;
+    border-radius: var(--bd-radius);
+    transition: .5s;
+}
+
+.footer h1 {
+    font-size: clamp(4.5rem, 8vmax, 10rem);
+}
+
+.footer p {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-left: .5rem;
+}
+/********************************  fim hero da página  ********************************/
+
+
+/********************************  fintech  ********************************/
+.container {
+    width: 100%;
+    padding: 1rem 4rem;
+    margin-top: 3rem;
+}
+
+.titles {
+    font-size: 4.5rem;
+    width: 60%;
+    margin: 2rem 0;
+}
+
+.fintech-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.fintech-grid-item {
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.fintech-grid-item img {
+    border-radius: var(--bd-radius);
+    filter: grayscale(0.9);
+    transition: .5s;
+}
+
+.fintech-grid-item:hover img {
+    filter: grayscale(0);
+    scale: 1.05;
+}
+
+.fintech-grid-item p {
+    position: absolute;
+    bottom: 2rem;
+    left: 1rem;
+    transition: .5s;
+}
+
+.fintech-grid-item:hover p {
+    letter-spacing: 3px;
+}
+/********************************  fim fintech  ********************************/
+
+
+/******************************** Criar conta ********************************/
+
+.registrar {
+    background-color: var(--color-blue-200);
+}
+
+.registrar h2 {
+    color: var(--color-blue-900)
+}
+
+.form-label {
+    color: var(--color-blue-900);
+}
+
+.btn-primary {
+    font-weight:lighter;
+    color: var(--color-blue-100);
+    background-color: var(--color-blue-500);
+    border-color: var(--color-blue-900);
+}
+
+.btn-primary:hover {
+    font-weight: bold;
+    color: var(--color-blue-500);
+    background-color: var(--color-blue-100);
+    border-color: var(--color-blue-900);
+}
+/******************************** fim Criar conta ********************************/
+
+/********************************  responsivo  ********************************/
+@media(width <= 1024px){
+    .sanduiche {
+        display: block;
+    }
+
+    .header-menu {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-blue-900);
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: -100%;
+        gap: 0;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        transition: .5s;
+    }
+
+    .active {
+        left: 0;
+    }
+
+    .sanduiche.active .barra:first-child {
+        transform: translateY(8px) rotate(360deg) rotate(45deg);
+    }
+
+    .sanduiche.active .barra:nth-child(2) {
+        opacity: 0;
+    }
+
+    .sanduiche.active .barra:last-child {
+        transform: translateY(-8px) rotate(-360deg) rotate(-45deg);
+    }
+
+    .header-menu li {
+        margin: 2rem 0;
+    }
+
+}
+
+@media(width <= 900px) {
+    .fintech {
+        width: 100%;
+    }
+
+    .fintech-grid {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+    }
 }
