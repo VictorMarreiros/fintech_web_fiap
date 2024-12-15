@@ -164,6 +164,37 @@ span {
     letter-spacing: 3px;
 }
 /********************************  fim fintech  ********************************/
+
+
+/******************************** Criar conta ********************************/
+
+.registrar {
+    background-color: var(--color-blue-200);
+}
+
+.registrar h2 {
+    color: var(--color-blue-900)
+}
+
+.form-label {
+    color: var(--color-blue-900);
+}
+
+.btn-primary {
+    font-weight:lighter;
+    color: var(--color-blue-100);
+    background-color: var(--color-blue-500);
+    border-color: var(--color-blue-900);
+}
+
+.btn-primary:hover {
+    font-weight: bold;
+    color: var(--color-blue-500);
+    background-color: var(--color-blue-100);
+    border-color: var(--color-blue-900);
+}
+/******************************** fim Criar conta ********************************/
+
 /********************************  responsivo  ********************************/
 @media(width <= 1024px){
     .sanduiche {
@@ -205,4 +236,17 @@ span {
         margin: 2rem 0;
     }
 
+}
+
+@media(width <= 900px) {
+    .fintech {
+        width: 100%;
+    }
+
+    .fintech-grid {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem 0;
+    }
 }
